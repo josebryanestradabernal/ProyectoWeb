@@ -1,29 +1,78 @@
-.dashboard {    
+.dashboard {  
+    border-radius: 20px;
+    border-color: black;
+    border: 10px black;  
     text-align: center;
     float: left;
     width: 30%;
-    height:200px ;
-    background-color: rgba(73, 195, 124, 0.452);
+    height:inherit ;
+    background-color: rgb(172, 243, 202);
+  
+}
+
+.agregarBtn{
+    background-color: #4CAF50; 
+    border: 1px solid;
+    border-color: #4caf91;
+    color: white;
+    padding: 8px ;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 20%;
+    margin-top: 20px;
+    margin-right: 10px;
 }
 .resultado {
     float: right;
     width: 70%;
-    height: 200px;
-    background-color: rgba(199, 218, 92, 0.383);
+    height: 100%;
+    
+    border-radius: 20px;
+    background-color: rgb(171, 172, 165);
 }
-body{
-    background-color: aquamarine;
+body , html{
+    background: white;
     text-align: center;
+    height: 100%;
+    
 }
 .button {
 
-    background-color: brown;  
-    width: 30%;
+    background-color: rgb(17, 196, 106);  
+    width: auto;
+    border: none;
+    border-radius: 10%;
     height: 30px;
 }
 .inputText {
     
-    background-color: brown;  
+    background-color: rgb(230, 252, 223);  
     width:90%;
     height: 30px;
+    border-radius: 10px;
+    border: none;
+}
+/*.inputText[type=text]:focus {
+    
+}*/
+.botonMas{
+    width: 100%;
+    display: flex ;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.botones{
+    margin-bottom: 30px;
+}
+.formPrincipal{
+    height: 100%;
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.Tiradas{
+    overflow-y: auto;
+    height: -webkit-fill-available;
 }
