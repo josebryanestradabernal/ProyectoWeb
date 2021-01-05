@@ -1,0 +1,28 @@
+.dashboard {    
+    text-align: center;
+    float: left;
+    width: 30%;
+    height:200px ;
+    background-color: rgba(73, 195, 124, 0.452);
+}
+.resultado {
+    float: right;
+    width: 70%;
+    height: 200px;
+    background-color: rgba(199, 218, 92, 0.383);
+}
+body{
+    background-color: aquamarine;
+}
+.buttonAccept {
+
+    background-color: brown;  
+    width: 100%;
+    height: 30px;
+}
+.inputText {
+    
+    background-color: brown;  
+    width:90%;
+    height: 30px;
+}
