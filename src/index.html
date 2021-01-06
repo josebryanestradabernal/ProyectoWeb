@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet",, href="css/styles.css">
-    <script src="prueba.js"></script>
     <title>Hexagramas</title>
 </head>
-<body>
+<body onLoad="iniciar()">
     <script src="js/desing.js"></script>
     <h1>Hexagramas</h1>
     <div class="dashboard"> 
@@ -24,20 +23,21 @@
             </div>
             
             <div class = "botones">
-                <input type="button" class="button" value="Aceptar" onclick="">
-                <input type="button" class="button" value = "Eliminar Fila"onclick="">
+                <input type="button" class="button" value="Aceptar" onclick="AgregarFinal()">
+                <input type="button" class="button" value = "Eliminar Fila" onclick="">
                 <input type="button" class ="button" onclick="" value="Eliminar Hex">
             </div>
            
         </form>
     </div>
 
-    <div class="resultado" onLoad="iniciar()">
-    	<center>
-    	<table align="center" width="450" border="2">
-    		
-    	</table>
-    	</center>
+    <div class="resultado">
+    	<table align="center" width="450">
+            <tbody id="tabla1"><!--etiqueta tbody para agregar celdas dinamicas-->
+            </tbody>
+        </table>    <br/><br/>
+        
     </div>
+
 </body>
 </html>
