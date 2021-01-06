@@ -1,4 +1,5 @@
 var tabla,lista,celda,texto;
+
 function iniciar(){
 	tabla=document.getElementById("tabla1");
 	lista=document.createElement("tr")//se crea
