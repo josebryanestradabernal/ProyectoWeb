@@ -10,7 +10,7 @@
     <script src="js/desing.js"></script>
     <h1>Hexagramas</h1>
     <div class="dashboard"> 
-        <form action="" class="formPrincipal">
+        <form name="hexa" action="" class="formPrincipal">
           
             <div class = "botonMas" >
 
@@ -19,11 +19,15 @@
             </div>
             <br>
             <div class="Tiradas" >
-                <input class="inputText" type="text" name="" id="" title="Tirada">
+
+                <input class="inputText" type="text" name="tirada1" id="" title="Tirada">
+                <input class="inputText" type="text" name="tirada2" id="" title="">
+                <input class="inputText" type="text" name="tirada3" id="" title="">
+
             </div>
             
             <div class = "botones">
-                <input type="button" class="button" value="Aceptar" onclick="AgregarFinal()">
+                <input type="button" class="button" value="Aceptar" onclick="final();">
                 <input type="button" class="button" value = "Eliminar Fila" onclick="">
                 <input type="button" class ="button" onclick="" value="Eliminar Hex">
             </div>
@@ -32,7 +36,7 @@
     </div>
 
     <div class="resultado">
-    	<table align="center" width="450">
+    	<table align="center" width="450" border="2">
             <tbody id="tabla1"><!--etiqueta tbody para agregar celdas dinamicas-->
             </tbody>
         </table>    <br/><br/>
