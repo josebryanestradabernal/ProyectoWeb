@@ -17,6 +17,8 @@ function iniciar(){
 }
 
 function contador(){
+	var element = document.getElementById("tabla11") //con esto haces que se vea la tabla al darle aceptar
+	element.style.visibility='visible'
 	if(cont>0){
 		cont--
 		hx[cont]=evalua();
