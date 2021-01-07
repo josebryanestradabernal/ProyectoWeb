@@ -1,4 +1,5 @@
-var tabla,lista,celda,texto,supercel,cont=0;
+var tabla,lista,celda,texto,supercel,cont=6;
+var hx= new Array();
 
 function onClickAgregarInText(){ 
    var padre = document.getElementsByClassName("Tiradas")[0];
@@ -15,14 +16,14 @@ function iniciar(){
 	tabla.appendChild(lista);
 }
 
-
 function contador(){
-	if(cont<6){
-		cont++
-		evalua();
+	if(cont>0){
+		cont--
+		hx[cont]=evalua();
 	}
-	else
-		alert("fin");
+	else{
+		trigra();
+	}
 }
 
 function evalua(){
@@ -43,6 +44,8 @@ function evalua(){
 
 	if (aux==9)
 		yangmutante();
+
+	return aux;
 }
 
 function yang(){
@@ -58,6 +61,7 @@ function yang(){
 	}
 	else
 		tabla.appendChild(lista);
+
 }
 
 function yin(){
@@ -74,6 +78,7 @@ function yin(){
 	}
 	else
 		tabla.appendChild(lista);
+
 }
 
 function yangmutante(){
@@ -106,6 +111,28 @@ function yinmutante(){
 	else
 		tabla.appendChild(lista);
 }
+
+function trigra(){
+	var supaux =new Array();
+
+	supaux[0]=hx[0];
+	supaux[1]=hx[1];
+	supaux[2]=hx[2];
+
+	var infaux=new Array();
+
+	infaux[0]=hx[3];
+	infaux[1]=hx[4];
+	infaux[2]=hx[5];
+
+	var inf=infaux.join('');
+	var sup=supaux.join('');
+
+	alert(inf+","+sup);
+
+}
+
+
 
 
 
