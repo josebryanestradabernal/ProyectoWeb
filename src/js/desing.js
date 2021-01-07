@@ -1,4 +1,4 @@
-var tabla,lista,celda,texto,supercel;
+var tabla,lista,celda,texto,supercel,cont=0;
 
 function onClickAgregarInText(){ 
    var padre = document.getElementsByClassName("Tiradas")[0];
@@ -15,56 +15,141 @@ function iniciar(){
 	tabla.appendChild(lista);
 }
 
-/* 	function AgregarFinal(){
 
-	 hacer dos if con lineas, para el espacio y para sin el, omitir el for
-	var valor="____________";
-	for (var j = 0; j < 3; j++) {
-	celda=document.createElement("td");
-	texto=document.createTextNode(valor);
-	celda.appendChild(texto);
-	if (lista.hasChildNodes())
-			    lista.insertBefore(celda,lista.childNodes[0]);
-			else
-			    lista.appendChild(celda);
+function contador(){
+	if(cont<6){
+		cont++
+		evalua();
 	}
-	lista=document.createElement("tr")//se crea
-			tabla.appendChild(lista);
+	else
+		alert("fin");
+}
 
-}*/
+function evalua(){
+	var a,b,c;
+	a=parseInt(hexa.tirada1.value,10);
+	b=parseInt(hexa.tirada2.value,10);
+	c=parseInt(hexa.tirada3.value,10);
+	var aux=a+b+c;
 
+	if (aux==6)
+		yinmutante();
+
+	if (aux==7)
+		yang();
+
+	if (aux==8)
+		yin();
+
+	if (aux==9)
+		yangmutante();
+}
+
+function yang(){
+	var valor7="_________";
+	lista=document.createElement("tr");
+	celda=document.createElement("td");
+	texto=document.createTextNode(valor7);
+	celda.appendChild(texto);
+	lista.appendChild(celda);
+
+	if(tabla.hasChildNodes()){
+		tabla.insertBefore(lista,tabla.childNodes[0]);
+	}
+	else
+		tabla.appendChild(lista);
+}
+
+function yin(){
+	var valor8="____    ____";
+
+	lista=document.createElement("tr");
+	celda=document.createElement("td");
+	texto=document.createTextNode(valor8);
+	celda.appendChild(texto);
+	lista.appendChild(celda);
+
+	if(tabla.hasChildNodes()){
+		tabla.insertBefore(lista,tabla.childNodes[0]);
+	}
+	else
+		tabla.appendChild(lista);
+}
+
+function yangmutante(){
+	var valor7="____0____";
+	lista=document.createElement("tr");
+	celda=document.createElement("td");
+	texto=document.createTextNode(valor7);
+	celda.appendChild(texto);
+	lista.appendChild(celda);
+
+	if(tabla.hasChildNodes()){
+		tabla.insertBefore(lista,tabla.childNodes[0]);
+	}
+	else
+		tabla.appendChild(lista);
+}
+
+function yinmutante(){
+	var valor8="____x____";
+
+	lista=document.createElement("tr");
+	celda=document.createElement("td");
+	texto=document.createTextNode(valor8);
+	celda.appendChild(texto);
+	lista.appendChild(celda);
+
+	if(tabla.hasChildNodes()){
+		tabla.insertBefore(lista,tabla.childNodes[0]);
+	}
+	else
+		tabla.appendChild(lista);
+}
+
+
+
+/*
 function final(){
 	// hacer dos if con lineas, para el espacio y para sin el, omitir el for
 	var a,b,c;
 	a=parseInt(hexa.tirada1.value,10);
 	b=parseInt(hexa.tirada2.value,10);
 	c=parseInt(hexa.tirada3.value,10);
-
 	var aux=a+b+c;
 	var valor8="____    ____";
 	var valor7="_________";
+	
 	if(aux==7){
-	celda=document.createElement("td");
-	texto=document.createTextNode(valor7);
-	celda.appendChild(texto);
-	if (lista.hasChildNodes())
-		lista.insertBefore(celda,lista.childNodes[0]);
-	else
+		
+		lista=document.createElement("tr");
+		celda=document.createElement("td");
+		texto=document.createTextNode(valor7);
+		celda.appendChild(texto);
 		lista.appendChild(celda);
 
+		if(tabla.hasChildNodes()){
+			tabla.insertBefore(lista,tabla.childNodes[0]);
 		}
+		else
+			tabla.appendChild(lista);
+	}
 
 	if(aux==8){
-			celda=document.createElement("td");
-			texto=document.createTextNode(valor8);
-			celda.appendChild(texto);
-			if (lista.hasChildNodes())
-				lista.insertBefore(celda,lista.childNodes[0]);
-			else
-				lista.appendChild(celda);
-		}
+		
+		lista=document.createElement("tr");
+		celda=document.createElement("td");
+		texto=document.createTextNode(valor8);
+		celda.appendChild(texto);
+		lista.appendChild(celda);
 
-	lista=document.createElement("tr")//se crea
-	tabla.appendChild(lista);
-}
+		if(tabla.hasChildNodes()){
+			tabla.insertBefore(lista,tabla.childNodes[0]);
+		}
+		else
+			tabla.appendChild(lista);
+	}
 	
+	
+}
+*/
