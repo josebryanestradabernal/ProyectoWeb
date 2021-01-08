@@ -1,6 +1,46 @@
 var tabla,lista,celda,texto,supercel,cont=6;
 var hx= new Array();
-
+/**
+ * Borra la ultima linea en la tabla
+ */
+function onClickEliminarFila(){
+	//elimina el primer elemento del hexagrama
+	var tablas = document.getElementsByTagName("tbody")
+	//console.log(tablas);
+	tablas[0].removeChild(tablas[0].firstChild)
+	cont++;
+	//borra las tablas que corrigen los mutantes y ademas las oculta
+	for (var i=1 ;i<tablas.length;i++ ){
+		var element = tablas[i]
+		element.style.visibility="hidden"
+		 while (element.firstChild){
+			 element.removeChild(element.firstChild)
+		 }
+		}
+	//elimina el hexagrama si esta en 6
+	if (cont===6){
+		onClickEliminarButton()
+	}
+	
+}
+function onClickEliminarButton(){
+	cont=6;
+	for (var i=1; i<4;i++){
+		document.getElementById("tabla"+i+i).style.visibility='hidden'
+	}
+	/**
+	 * Borra los hijos de cada una de las tablas por si igual hay hijos en 
+	 * las correcciones de la mutante
+	 */
+	var tablas = document.getElementsByTagName("tbody")
+	//console.log(tablas)
+	for (var i=0 ;i<tablas.length;i++ ){
+		var element = tablas[i]
+		 while (element.firstChild){
+			 element.removeChild(element.firstChild)
+		 }
+		}
+}
 function onClickAgregarInText(){ 
    var padre = document.getElementsByClassName("Tiradas")[0];
    
