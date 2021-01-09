@@ -155,6 +155,36 @@ function yinmutante(){
 		tabla.appendChild(lista);
 }
 
+function yinmutante(){
+	var valor8="____x____";
+
+	lista=document.createElement("tr");
+	celda=document.createElement("td");
+	texto=document.createTextNode(valor8);
+	celda.appendChild(texto);
+	lista.appendChild(celda);
+
+	if(tabla.hasChildNodes()){
+		tabla.insertBefore(lista,tabla.childNodes[0]);
+	}
+	else
+		tabla.appendChild(lista);
+}
+
+function insertaNombreHexagrama(nombre){
+	var valor8= nombre;
+
+	lista=document.createElement("tr");
+	celda=document.createElement("td");
+	texto=document.createTextNode(valor8);
+	celda.appendChild(texto);
+	lista.appendChild(celda);
+
+	if(tabla.hasChildNodes()){
+		tabla.insertBefore(lista,null);
+	}
+}
+
 function nombreHexagrama(){
 	//Esta funcion obtiene el nombre del hexagrama evaluando un string del los valores obtenidos de la tirada y luego  los compara
 
@@ -168,6 +198,7 @@ function nombreHexagrama(){
 		y=hexas[x];
 
 		if(hx2 == y){
+			insertaNombreHexagrama(x + ". " + nombreshexagramas[x]);
 			alert("Hexagrama Numero: "+x);
 			alert("Nombre del Hexagrama: "+nombreshexagramas[x]);
 			break;

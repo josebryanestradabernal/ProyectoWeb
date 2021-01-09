@@ -114,3 +114,8 @@ td,tr{
     display: inline-flex;
 
 }
+
+.resultado .table_Hexagrama{
+    height: 30%;
+    margin-top: 5%;
+}
