@@ -148,3 +148,13 @@ td,tr{
     border-color: aqua;
     background-color: rgba(0, 255, 255, 0.295);
 }
+
+.non_selected{
+    width: 28px;
+    height: 13px;
+    border: 1px solid;
+    border-radius: 10%;
+    border-spacing: 0px;
+    border-color: white;
+    background-color: rgba(255, 255, 255, 0);
+}

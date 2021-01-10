@@ -13,21 +13,27 @@ function onClickEliminarFila(){
 	tablas[0].removeChild(tablas[0].firstChild)
 	cont++;
 	//borra las tablas que corrigen los mutantes y ademas las oculta
-	for (var i=1 ;i<tablas.length;i++ ){
-		var element = tablas[i]
-		element.style.visibility="hidden"
+	for (var i=1 ;i<tablas.length - 1;i++ ){
+		var element = tablas[i];
+		document.getElementById("tabla"+(i+1)+(i+1)).style.visibility='hidden';
 		 while (element.firstChild){
-			 element.removeChild(element.firstChild)
+			 element.removeChild(element.firstChild);
 		 }
 		}
 	//elimina el hexagrama si esta en 6
+
+	if(tabla.children.length > 6)
+		tabla.children[6].remove();
+
+	reiniciaTabla();
 	if (cont===6){
-		onClickEliminarButton()
+		onClickEliminarButton();
 	}
 	
 }
 function onClickEliminarButton(){
 	cont=6;
+	reiniciaTabla();
 	for (var i=1; i<4;i++){
 		document.getElementById("tabla"+i+i).style.visibility='hidden'
 	}
@@ -37,7 +43,7 @@ function onClickEliminarButton(){
 	 */
 	var tablas = document.getElementsByTagName("tbody")
 	//console.log(tablas)
-	for (var i=0 ;i<tablas.length;i++ ){
+	for (var i=0 ;i<tablas.length - 1;i++ ){
 		var element = tablas[i]
 		 while (element.firstChild){
 			 element.removeChild(element.firstChild)
@@ -65,15 +71,25 @@ function iniciar(){
 	tabla3.appendChild(lista3);
 }
 
+function reiniciaTabla(){
+	for(i= 1; i<= 64; i++){
+		document.getElementById(i).className= "non_selected";
+	}
+}
+
+function coloreaCuadroTabla(posicion){
+	document.getElementById(posicion).className= "selected";
+}
+
 function contador(){
 	var element = document.getElementById("tabla11") //con esto haces que se vea la tabla al darle aceptar
 	element.style.visibility='visible'
-	
+
 	if(cont>0){
 		cont--
 		hx[cont]=evalua();
 	}
-	else{
+	else if(tabla.children.length <= 7){
 		nombreHexagrama();
 		nombreTrigrama();
 	}
@@ -165,10 +181,10 @@ function yinmutante(){
 		tabla.appendChild(lista);
 }
 
-function insertaNombreHexagrama(nombre, tabla){
+function insertaNombreHexagrama(nombre, tab_number){
 	var valor8= nombre;
 	
-	switch(tabla){
+	switch(tab_number){
 		case 1:
 			lista=document.createElement("tr");
 			celda=document.createElement("td");
@@ -263,6 +279,7 @@ function checkMutacion(){
 			break;
 	}
 	//alert('Valor seleccionado: ' + hx2 + ' de la posicion: ' + x);
+	coloreaCuadroTabla(x);
 	insertaNombreHexagrama(x + ". " + nombreshexagramas[x], 2);
 
 
@@ -294,6 +311,7 @@ function checkMutacion(){
 		if(hx2 == hexas[x])
 			break;
 	}
+	coloreaCuadroTabla(x);
 	insertaNombreHexagrama(x + ". " + nombreshexagramas[x], 3);
 	
 }
@@ -325,6 +343,7 @@ function nombreHexagrama(){
 		//alert('Se encontró una mutación');
 		checkMutacion();
 	}else{
+		coloreaCuadroTabla(x);
 		insertaNombreHexagrama(x + ". " + nombreshexagramas[x], 1);
 	}
 	
