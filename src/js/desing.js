@@ -23,8 +23,10 @@ function onClickEliminarFila(){
 		}
 	//elimina el hexagrama si esta en 6
 
-	if(tabla.children.length > 6)
+	if(tabla.children.length > 6){
+		//alert('Se eliminará el último elemento: ' + tabla.children[6].textContent);
 		tabla.children[6].remove();
+	}
 
 	alreadyShowing= false;
 	reiniciaTabla();
@@ -348,6 +350,7 @@ function nombreHexagrama(){
 
 	if(checkMut){
 		//alert('Se encontró una mutación');
+		document.getElementById("hexanormal").children[0].textContent= "";
 		checkMutacion();
 	}else{
 		coloreaCuadroTabla(x);
@@ -363,7 +366,11 @@ function descripcionNormal(numero){
 
     var superlabel = document.createElement('label');
     superlabel.appendChild(document.createTextNode(descripcion));
-    document.getElementById("hexanormal").appendChild(superlabel);
+	
+	if(document.getElementById("hexanormal").children.length === 0)
+		document.getElementById("hexanormal").appendChild(superlabel);
+	else
+		document.getElementById("hexanormal").children[0].textContent= descripcion;
     }
 
 function descripcionMutante1(numero){
@@ -371,16 +378,24 @@ function descripcionMutante1(numero){
 
     var superlabel = document.createElement('label');
     superlabel.appendChild(document.createTextNode(descripcion));
-    document.getElementById("hexamutante1").appendChild(superlabel);
-    }
+
+	if(document.getElementById("hexamutante1").children.length === 0)
+		document.getElementById("hexamutante1").appendChild(superlabel);
+	else
+		document.getElementById("hexamutante1").children[0].textContent= descripcion;
+}
 
 function descripcionMutante2(numero){
     descripcion=descripcionHexagrama(numero);
 
     var superlabel = document.createElement('label');
-    superlabel.appendChild(document.createTextNode(descripcion));
-    document.getElementById("hexamutante2").appendChild(superlabel);
-    }
+	superlabel.appendChild(document.createTextNode(descripcion));
+	
+	if(document.getElementById("hexamutante2").children.length === 0)
+		document.getElementById("hexamutante2").appendChild(superlabel);
+	else
+		document.getElementById("hexamutante2").children[0].textContent= descripcion;
+}
 
 function descripcionHexagrama(numero){
 	nombre=[0,
