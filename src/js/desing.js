@@ -1,4 +1,4 @@
-var tabla,lista,celda,texto,supercel,cont=6;
+var tabla,lista,celda,texto,des,cont=6;
 var tabla2, celda2, lista2;
 var tabla3, celda3, lista3;
 var nombreshexagramas, hexas;
@@ -66,6 +66,7 @@ function iniciar(){
 	lista=document.createElement("tr");
 	lista2=document.createElement("tr");
 	lista3=document.createElement("tr");
+	des=document.createElement("label");
 	tabla.appendChild(lista);
 	tabla2.appendChild(lista2);
 	tabla3.appendChild(lista3);
@@ -281,6 +282,7 @@ function checkMutacion(){
 	//alert('Valor seleccionado: ' + hx2 + ' de la posicion: ' + x);
 	coloreaCuadroTabla(x);
 	insertaNombreHexagrama(x + ". " + nombreshexagramas[x], 2);
+	show(x);
 
 
 	hx2= "";
@@ -313,6 +315,7 @@ function checkMutacion(){
 	}
 	coloreaCuadroTabla(x);
 	insertaNombreHexagrama(x + ". " + nombreshexagramas[x], 3);
+	show(x);
 	
 }
 
@@ -345,9 +348,86 @@ function nombreHexagrama(){
 	}else{
 		coloreaCuadroTabla(x);
 		insertaNombreHexagrama(x + ". " + nombreshexagramas[x], 1);
+		show(x);
 	}
 	
 }
+
+/*function elpinchelabel(numero){
+	
+	document.getElementById("hola").des.appendChild(document.createTextNode(descripcion[numero]));
+	}*/
+
+function show(numero){
+    descripcion=[0,
+    "1. Cielo. Lo creativo. El principio generador",
+    "2. Tierra. Lo receptivo. El principio pasivo",
+    "3. Acumular. El obstáculo inicial. La dificultad del comienzo",
+    "4. Juventud. El joven necio. La inmadurez.",
+    "5. Esperar. La espera. La maduración.",
+    "6. Disputar. El conflicto. El pleito.",
+	"7. Ejército. La legión.",
+	"8. Solidaridad. La unión",
+	"9. Animalito doméstico. La pequeña fuerza",
+	"10. Caminar. El porte. El paso cauteloso",
+	"11. Prosperidad. La paz. La armonía.",
+	"12. Cierre. El estancamiento. Lo inerte.",
+	"13.Hombres Reunidos. La unión comunitaria",
+	"14.Gran dominio. La gran posesión. Lo que se tiene de más.",
+	"15.Condescendencia. La modestia. La humildad",
+	"16.Ocuparse. El entusiasmo. La algarabía.",
+	"17.Conformarse. La continuidad. El seguimiento.",
+	"18.Destrucción. La reconstrucción. La labor en lo corrompido.",
+	"19.Acercarse. Lo que va llegando.",
+	"20.Observar. La contemplación.",
+	"21.Quebrar mordiendo. La dentellada. La filosa mordedura",
+	"22.Adornar. La elegancia. La gracia.",
+	"23.Resquebrajar. La desintegración. El derrumbe",
+	"24.Regresar. El retorno. Lo que vuelve.",
+	"25.Sinceridad. La inocencia. La naturalidad.",
+	"26.Fuerza educadora. El poder de lo fuerte. La gran acumulación.",
+	"27.Nutrirse. La alimentación. Las fauces.",
+	"28.Excesos. La preponderancia de lo grande.",
+	"29.Peligro. Lo abismal. La caida.",
+	"30.Distinguir. El resplandor. Lo adherente.",
+	"31.Unir. La influencia.La atracción.",
+	"32.Luna Creciente. La duración. La permanencia.",
+	"33.Retirarse. EL repliegue.",
+	"34.Gran fuerza. El gran vigor.",
+	"35.Progresar. El avance.",
+	"36.Luz que se apaga. El oscurecimiento.",
+	"37.Gente de familia. El clan.",
+	"38.Contraste. La oposición. El antagonismo.",
+	"39.Dificultad. El obstáculo. El impedimento.",
+	"40.Explicar. La liberación. El alivio.",
+	"41.Perder. La disminución.",
+	"42.Evolución. El aumento. La ganancia.",
+	"43.Decidir. El desbordamiento. La resolución.",
+	"44.Encontrarse. El acoplamiento.",
+	"45.Cosechar. La reunión. La convergencia.",
+	"46.Subir. El ascenso. La escalada.",
+	"47.Angustia. La pesadumbre. El agotamiento.",
+	"48.El pozo de agua. La fuente.",
+	"49.Renovar. La revolución. El cambio",
+	"50.La caldera. Lo alquímico",
+	"51.Trueno. La conmoción. Lo suscitativo.",
+	"52. Cimientos. La quietud. La detención.",
+	"53.Evolución. El progreso gradual.",
+	"54.Desposar a la hija menor. La doncella.",
+	"55.Abundancia. La plenitud.",
+	"56.Viajero. El andariego",
+	"57.Viento. Lo penetrante. Lo suave.",
+	"58.Recogerse. La serenidad. La satisfacción.",
+	"59.Confusión. La dispersión. La disolución",
+	"60.Moderación. La restricción. La limitación",
+	"61.Fe Interior. La verdad interior. La sinceridad interna.",
+	"62.Pequeñas cosas importantes. La pequeña preponderancia.",
+	"63.Conclusiones. Después de la realización.",
+	"64.Inconcluso. Antes de la realización."];
+    var labelerror = document.createElement('label');
+    labelerror.appendChild(document.createTextNode(descripcion[numero]));
+    document.getElementById("hola").appendChild(labelerror);
+    }
 
 function nombreTrigrama(){
 	//Esta funcion obtiene el nombre del trigrama inferior y superior, inf y sup son strings que tienen el valor de 7 y 9
