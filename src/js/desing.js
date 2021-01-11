@@ -3,6 +3,7 @@ var tabla2, celda2, lista2;
 var tabla3, celda3, lista3;
 var nombreshexagramas, hexas;
 var hx= new Array();
+var alreadyShowing= false;
 /**
  * Borra la ultima linea en la tabla
  */
@@ -25,6 +26,7 @@ function onClickEliminarFila(){
 	if(tabla.children.length > 6)
 		tabla.children[6].remove();
 
+	alreadyShowing= false;
 	reiniciaTabla();
 	if (cont===6){
 		onClickEliminarButton();
@@ -33,6 +35,7 @@ function onClickEliminarFila(){
 }
 function onClickEliminarButton(){
 	cont=6;
+	alreadyShowing= false;
 	reiniciaTabla();
 	for (var i=1; i<4;i++){
 		document.getElementById("tabla"+i+i).style.visibility='hidden'
@@ -90,7 +93,8 @@ function contador(){
 		cont--
 		hx[cont]=evalua();
 	}
-	else if(tabla.children.length <= 7){
+	else if(tabla.children.length <= 7 && !alreadyShowing){
+		alreadyShowing= true;
 		nombreHexagrama();
 		nombreTrigrama();
 	}
