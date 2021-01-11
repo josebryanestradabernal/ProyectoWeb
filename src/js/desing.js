@@ -23,6 +23,12 @@ function onClickEliminarFila(){
 		}
 	//elimina el hexagrama si esta en 6
 
+	for(i= 0; i< tabla.children.length; i++){
+		console.log('Buscando en: ' + tabla.children[i].textContent);
+		if(tabla.children[i].textContent.search('.') > 0)
+			tabla.children[i--].remove;
+	}
+	
 	if(tabla.children.length > 6){
 		//alert('Se eliminará el último elemento: ' + tabla.children[6].textContent);
 		tabla.children[6].remove();
