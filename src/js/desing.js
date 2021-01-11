@@ -350,7 +350,8 @@ function nombreHexagrama(){
 
 	if(checkMut){
 		//alert('Se encontró una mutación');
-		document.getElementById("hexanormal").children[0].textContent= "";
+		if(typeof document.getElementById("hexanormal").children[0] !== 'undefined')
+			document.getElementById("hexanormal").children[0].textContent= "";
 		checkMutacion();
 	}else{
 		coloreaCuadroTabla(x);
